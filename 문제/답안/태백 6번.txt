@@ -1,0 +1,11 @@
+declare
+    --변수 선언
+    v_tree varchar2(10) := '*';
+begin
+    --v_tree 문자열 길이가 5보다 작거나 같을때까지 반복문 실행
+    while length(v_tree) <= 5 loop
+        dbms_output.put_line(v_tree);
+        v_tree := v_tree || '*'; --반복문이 실행될 때마다 '*'추가
+    end loop;
+end;
+/

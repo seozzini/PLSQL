@@ -1,0 +1,18 @@
+/*
+7. 치환변수(&)를 사용하면 숫자를 입력하면 
+해당 구구단이 출력되도록 하시오.
+예) 2 입력시 아래와 같이 출력
+2 * 1 = 2
+2 * 2 = 4
+*/
+
+DECLARE
+    v_dan NUMBER(2,0) := &단;
+    v_num NUMBER(2,0) := 1;
+BEGIN
+    WHILE v_num < 10 LOOP
+        DBMS_OUTPUT.PUT_LINE(v_dan || ' X ' || v_num || ' = ' || (v_dan * v_num));
+        v_num := v_num + 1;
+    END LOOP;
+END;
+/

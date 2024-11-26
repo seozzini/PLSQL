@@ -1,0 +1,37 @@
+/*
+3.
+사원번호를 입력(치환변수사용&)할 경우
+입사일이 2025년 이후(2025년 포함)이면 'New employee' 출력
+      2025년 이전이면 'Career employee' 출력
+단, DBMS_OUTPUT.PUT_LINE ~ 은 한번만 사용
+*/
+
+/*
+4.
+create table test01(empid, ename, hiredate)
+as
+  select employee_id, last_name, hire_date
+  from   employees
+  where  employee_id = 0;
+
+create table test02(empid, ename, hiredate)
+as
+  select employee_id, last_name, hire_date
+  from   employees
+  where  employee_id = 0;
+
+사원번호를 입력(치환변수사용&)할 경우
+사원들 중 2025년 이후(2025년 포함)에 입사한 사원의 사원번호, 
+사원이름, 입사일을 test01 테이블에 입력하고, 2025년 이전에 
+입사한 사원의 사원번호,사원이름,입사일을 test02 테이블에 입력하시오.
+*/
+
+/*
+5.
+급여가  5000이하이면 20% 인상된 급여
+급여가 10000이하이면 15% 인상된 급여
+급여가 15000이하이면 10% 인상된 급여
+급여가 15001이상이면 급여 인상없음
+
+사원번호를 입력(치환변수)하면 사원이름, 급여, 인상된 급여가 출력되도록 PL/SQL 블록을 생성하시오.
+*/

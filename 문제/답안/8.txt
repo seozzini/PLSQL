@@ -1,0 +1,16 @@
+--8 구구단
+DECLARE
+    v_dan NUMBER(4,0) :=2; --단 (정수, 2~9)
+    v_number NUMBER(4,0):= 1; --(숫자1~9)
+BEGIN
+    WHILE v_dan<=9 LOOP
+    v_number:= 1;
+     WHILE v_number<=9 LOOP
+     DBMS_OUTPUT.PUT_LINE(v_dan||'*'||v_number||'='|| (v_number*v_dan));
+       
+        v_number := v_number+1;                    
+        END LOOP;
+    v_dan := v_dan + 1;
+    END LOOP;
+END;
+/
