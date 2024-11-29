@@ -300,7 +300,7 @@ FROM employees;
 
 
 
--- 명시적 커서 : 다중행 SELECT문을 실행하기 위한 PL/SQL 문법
+-- 명시적 커서 : 다중 행 SELECT문을 실행하기 위한 PL/SQL 문법
 
 --전체 SELECT는 명시적커서가 메모리에 데이터 올려놓은 상태와 같다
 --커서에 들어간 데이터의 형태 : '활성 집합(Active set)'
@@ -317,7 +317,7 @@ DECLARE
         
 BEGIN
     -- 2. 커서 실행
-    -- 2-1) 커서를 실제 실행해서 활성집합(결과)를 식별
+    -- 2-1) 커서를 실제 실행해서 활성집합(결과)를 식별 / 메모리에 올림
     -- 2-2) 포인터를 가장 위로 배치
     OPEN 커서명;
     
@@ -355,6 +355,7 @@ BEGIN
     
     -- 4. 커서 종료
     CLOSE emp_cursor;
+    
 END;
 /
 
@@ -481,7 +482,7 @@ BEGIN
     LOOP
         -- 3. 데이터 인출
         FETCH emp_of_dept_cursor INTO v_eid, v_ename, v_job;
-        EXIT WHEN emp_of_dept_cursor%NOTFOUND;
+        EXIT WHEN emp_of_dept_cursor%NOTFOUND;  -- FETCH 다음 EXIT WHEN쓰는 이유? 마지막 데이터 중복되지 않도록 보장
     
         -- 4. 데이터 인출 성공 시 연산
         DBMS_OUTPUT.PUT(emp_of_dept_cursor%ROWCOUNT || ' : '); -- LOOP문 내부 유동값, 현재 반환된 데이터 갯수

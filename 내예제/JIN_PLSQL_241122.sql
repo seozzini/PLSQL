@@ -217,9 +217,9 @@ END;
 -- 출력 : 사원이름,급여,연봉 / 연봉 = (급여*12+(nvl(급여,0)*nvl(커미션퍼센트,0)*12))
 
 -- 1) 필요한 SQL문 확인
-SELECT last_name, salary, (salary*12+(nvl(salary,0)*nvl(commision_pct,0)*12))
+SELECT last_name, salary, (salary*12+(nvl(salary,0)*nvl(commission_pct,0)*12))
 FROM employees
-WHERE employees_id = &사원번호;
+WHERE employee_id = &사원번호;
 
 
 -- 2) PL/SQL 블록 작성

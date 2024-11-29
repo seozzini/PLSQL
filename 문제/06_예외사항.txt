@@ -1,0 +1,15 @@
+/*
+1.
+drop table emp_test;
+
+create table emp_test
+as
+  select employee_id, last_name
+  from   employees
+  where  employee_id < 200;
+
+emp_test 테이블에서 사원번호를 사용(&치환변수 사용)하여 사원을 삭제하는 PL/SQL을 작성하시오.
+(단, 사용자 정의 예외사항 사용)
+(단, 사원이 없으면 "해당사원이 없습니다.'라는 오류메시지 발생)
+*/
+
